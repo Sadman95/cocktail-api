@@ -4,8 +4,14 @@ const error = (message,textColor) =>{
     errorField.innerText = message;
     errorField.style.color = textColor;
 }
+const searchText = document.getElementById('search-field');
+const searchBtn = document.getElementById('search-button');
+searchText.addEventListener('keypress', (event) => {
+    if(event.key === "Enter"){
+        searchBtn.click();
+    }
+})
 const loadDrinks = () => {
-    const searchText = document.getElementById('search-field');
     if(searchText.value === ''){
         const message = 'Put your favorite drinks name';
         const textColor = 'red';
