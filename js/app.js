@@ -83,9 +83,9 @@ const displayDetails = (details) =>{
                 <p class="card-text">${details.strInstructions}</p>
             </div>
             <div class="card-footer bg-transparent border-success"><b>Ingredients:</b>
-                <ul class="d-flex list-unstyled mt-2">
+                <ul class="d-flex flex-wrap gap-1 list-unstyled mt-2">
                     <li id="first" class="rounded-2 bg-primary text-light px-2 py-1">${details.strIngredient1}</li>
-                    <li id="second"class="mx-1 rounded-2 bg-danger text-light px-2 py-1">${details.strIngredient2}</li>
+                    <li id="second"class="rounded-2 bg-danger text-light px-2 py-1">${details.strIngredient2}</li>
                     <li id="third" class="rounded-2 bg-success text-light px-2 py-1">${details.strIngredient3}</li>
                 </ul>
             </div>
