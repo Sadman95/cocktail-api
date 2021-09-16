@@ -63,18 +63,6 @@ const showDetails = (id) => {
 
 const displayDetails = (details) =>{
     const drinkDetails = document.getElementById('drink-details');
-    /* ----to be fixed when any value is null----- */
-        /* const detailsArr = [];
-        detailsArr.push(details);
-            // console.log(detailsArr);
-            detailsArr.filter(property => {
-                const objArr = Object.values(property);
-                // console.log(objArr)
-                const filtObjarr = objArr.filter(item => item !== null);
-                console.log(filtObjarr);
-            }); */
-   
-
     drinkDetails.innerHTML = `
         <div class="card border-success mb-3 mx-auto w-50">
             <div class="card-header bg-secondary border-success text-light">${details.strCategory}</div>
@@ -84,12 +72,16 @@ const displayDetails = (details) =>{
             </div>
             <div class="card-footer bg-transparent border-success"><b>Ingredients:</b>
                 <ul class="d-flex flex-wrap gap-1 list-unstyled mt-2">
-                    <li id="first" class="rounded-2 bg-primary text-light px-2 py-1">${details.strIngredient1}</li>
-                    <li id="second"class="rounded-2 bg-danger text-light px-2 py-1">${details.strIngredient2}</li>
-                    <li id="third" class="rounded-2 bg-success text-light px-2 py-1">${details.strIngredient3}</li>
+                    <li class="rounded-2 bg-primary text-light px-2 py-1 ing-list">${details.strIngredient1}</li>
+                    <li class="rounded-2 bg-danger text-light px-2 py-1 ing-list">${details.strIngredient2}</li>
+                    <li class="rounded-2 bg-success text-light px-2 py-1 ing-list">${details.strIngredient3}</li>
                 </ul>
             </div>
         </div>
     `;
+    // elimination of null:
+    const ingList = document.querySelectorAll('.ing-list');
+    ingList.forEach(item => item.innerText !== 'null' ? item.innerText : item.classList.add('d-none'));
+    
 }
 
